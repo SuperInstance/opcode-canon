@@ -18,7 +18,9 @@
 // WITHDRAW:  pull observation into private scope
 
 const BASE_OPCODES = ['BIND', 'LINK', 'EFFECT', 'VIEW', 'TICK'];
-const PROPOSED_OPCODES = ['ATTEST', 'DELEGATE', 'CONTEST', 'MERGER', 'REVOKE', 'WITHDRAW'];
+// Canonical spelling is MERGE (package description + header comment agreed);
+// code previously drifted to MERGER in this array and in OPCODE_SIGNATURES.
+const PROPOSED_OPCODES = ['ATTEST', 'DELEGATE', 'CONTEST', 'MERGE', 'REVOKE', 'WITHDRAW'];
 const ALL_OPCODES = [...BASE_OPCODES, ...PROPOSED_OPCODES];
 
 const OPCODE_SIGNATURES = {
@@ -32,7 +34,7 @@ const OPCODE_SIGNATURES = {
   ATTEST: { in: ['observation', 'attestor', 'trust'], out: ['attestation'], is_mutating: true },
   DELEGATE: { in: ['from', 'to', 'capabilities'], out: ['delegation-receipt'], is_mutating: true },
   CONTEST: { in: ['observation', 'contestor', 'evidence'], out: ['counter-observation'], is_mutating: true },
-  MERGER: { in: ['observations[]', 'merger'], out: ['merged-observation'], is_mutating: true },
+  MERGE: { in: ['observations[]', 'merger'], out: ['merged-observation'], is_mutating: true },
   REVOKE: { in: ['observation', 'revoker', 'reason'], out: ['revocation-scar'], is_mutating: true },
   WITHDRAW: { in: ['observation', 'withdrawer', 'reason'], out: ['withdrawal-scar'], is_mutating: true },
 };
