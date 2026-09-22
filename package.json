@@ -1,0 +1,10 @@
+{
+  "name": "@superinstance/opcode-canon",
+  "version": "0.1.0",
+  "description": "The 11 typed substrate opcodes (BIND/LINK/EFFECT/VIEW/TICK + ATTEST/DELEGATE/CONTEST/MERGE/REVOKE/WITHDRAW).",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "keywords": ["opcode", "substrate", "canon", "jev-quilt"],
+  "author": "SuperInstance",
+  "license": "MIT"
+}
